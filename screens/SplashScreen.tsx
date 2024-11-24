@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 const SplashScreen = ({ navigation }: any) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('Home');
+      navigation.replace('Main');
     }, 2000);
   }, []);
 

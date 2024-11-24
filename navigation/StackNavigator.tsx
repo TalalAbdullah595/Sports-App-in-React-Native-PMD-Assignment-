@@ -1,18 +1,19 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from '../screens/SplashScreen';
-import HomeScreen from '../screens/HomeScreen';
-import FixtureDetailsScreen from '../screens/FixtureDetailsScreen';
+import MainNavigator from './MainNavigator';
 
-const Stack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
-      <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-      <Stack.Screen name="Details" component={FixtureDetailsScreen} options={{ title: 'Fixture Details' }} />
-    </Stack.Navigator>
+    <RootStack.Navigator initialRouteName="Splash">
+      {/* Splash Screen */}
+      <RootStack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} />
+      
+      {/* MainNavigator includes the TabNavigator and MatchDetailsScreen */}
+      <RootStack.Screen name="Main" component={MainNavigator} options={{ headerShown: false }} />
+    </RootStack.Navigator>
   );
 };
 
