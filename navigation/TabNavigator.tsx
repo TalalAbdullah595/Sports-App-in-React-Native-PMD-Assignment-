@@ -15,20 +15,22 @@ const TabNavigator = () => {
         tabBarLabelStyle: { fontSize: 12 }, // Label style
       }}
       >
-      <Tab.Screen name="Cricket" component={CricketScreen}  
-        options={{
-          tabBarLabel: 'Cricket',  // Tab label
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="sports-cricket" color={color} size={size} /> // Cricket icon
-          ),
-        }}/>
-      <Tab.Screen name="Football" component={FootballScreen}
+    <Tab.Screen name="Football" component={FootballScreen}
       options={{
         tabBarLabel: 'Football',  // Tab label
         tabBarIcon: ({ color, size }) => (
           <MaterialIcons name="sports-soccer" color={color} size={size} /> // Football icon
         ),
       }} />
+
+    <Tab.Screen name="Cricket" component={CricketScreen}  
+        options={{
+          tabBarLabel: 'Cricket',  // Tab label
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="sports-cricket" color={color} size={size} /> // Cricket icon
+          ),
+        }}/>
+
     </Tab.Navigator>
   );
 };
